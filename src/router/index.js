@@ -1,7 +1,7 @@
 import {createRouter, createWebHistory } from 'vue-router'
-import JieLongInfoView from "../page/gushijielong/JieLongInfoView.vue";
 import JieLongHistoryView from "../page/gushijielong/JieLongHistoryView.vue";
 import JieLongHomeView from "../page/gushijielong/JieLongHomeView.vue";
+import JieLongInfoView from "../page/gushijielong/JieLongInfoView.vue";
 
 const routes = [
     {

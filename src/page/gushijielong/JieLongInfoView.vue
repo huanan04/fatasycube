@@ -1,19 +1,18 @@
 <template>
   <div>
     <h1>接龙信息</h1>
-    <JieLongInfo v-if="isTrue" :group="group" :groupId="groupId" :list="list"/>
+    <jie-long-info v-if="isTrue" :group="group" :groupId="groupId" :list="list"/>
   </div>
 </template>
 
 <script setup>
 import {getJieLongInfo} from "../../api/http/jielongHttp";
-import JieLongInfo from "../../components/jielong/JieLongInfo.vue";
 import {reactive, ref} from "vue";
 import {useRoute} from "vue-router";
 
 let list = reactive([])
 let groupId = ref(0)
-let group = reactive();
+let group = ref();
 let isTrue = ref(false)
 const route = useRoute()
 /**
@@ -25,7 +24,7 @@ const getInfo = () => {
         e.data.contents.forEach((v)=>{
           list.push(v)
         })
-        group = e.data.group
+        group.value = e.data.group
       }).catch(e => {
     console.log(e, '请求报错')
   })
