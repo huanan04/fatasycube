@@ -1,15 +1,32 @@
 import {createRouter, createWebHistory } from 'vue-router'
-import JieLongInfo from "../page/JieLongInfo.vue";
+import JieLongInfoView from "../page/gushijielong/JieLongInfoView.vue";
+import JieLongHistoryView from "../page/gushijielong/JieLongHistoryView.vue";
+import JieLongHomeView from "../page/gushijielong/JieLongHomeView.vue";
 
 const routes = [
     {
-        path: '/jielong/info/:groupId',
-        // path: '/',
-        name: '接龙详情',
+        path: '/',
+        name: 'JieLongHomeView',
         meta: {
-            title: '接龙详情'
+            title:'接龙首页'
         },
-        component: JieLongInfo
+        component: JieLongHomeView
+    },
+    {
+        path: '/JieLongInfo/:groupId',
+        name: 'jieLongInfoView',
+        meta: {
+            title: '接龙详细'
+        },
+        component: JieLongInfoView
+    },
+    {
+        path: '/JieLongHistory',
+        name: 'jieLongHistory',
+        meta: {
+            title: '历史接龙'
+        },
+        component: JieLongHistoryView
     }
 ]
 const router = createRouter({
